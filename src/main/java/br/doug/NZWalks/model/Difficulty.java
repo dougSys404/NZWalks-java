@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.util.UUID;
 
 @Entity
+@Table(name = "difficulty")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,10 +17,10 @@ public class Difficulty implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(updatable = false, nullable = false)
+    @Column(name = "id", updatable = false, nullable = false)
     private UUID id;
 
-
+    @Column(name = "name", nullable = false)
     private String name;
 
 }
