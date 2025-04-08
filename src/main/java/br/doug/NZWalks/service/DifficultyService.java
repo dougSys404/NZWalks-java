@@ -4,6 +4,7 @@ import br.doug.NZWalks.model.Difficulty;
 import br.doug.NZWalks.repository.DifficultyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.UUID;
@@ -29,7 +30,7 @@ public class DifficultyService {
         return repository.save(difficulty);
     }
 
-    public void delete(UUID id) {
+    public void delete(@PathVariable UUID id) {
 
         Difficulty difficultyToBeDeleted = findById(id);
 
