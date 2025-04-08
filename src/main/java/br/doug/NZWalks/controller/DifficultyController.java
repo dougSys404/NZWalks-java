@@ -38,6 +38,13 @@ public class DifficultyController {
         return ResponseEntity.ok(service.create(difficulty));
     }
 
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<Difficulty> update (@PathVariable UUID id, @RequestBody Difficulty difficulty){
+
+        return ResponseEntity.ok(service.update(id, difficulty));
+    }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Void> delete(@PathVariable UUID id){

@@ -30,7 +30,15 @@ public class DifficultyService {
         return repository.save(difficulty);
     }
 
-    public void delete(@PathVariable UUID id) {
+    public Difficulty update(UUID id, Difficulty difficulty){
+        Difficulty difficultyTobeUpdated = findById(id);
+
+        difficultyTobeUpdated.setName(difficulty.getName());
+
+        return repository.save(difficultyTobeUpdated);
+    }
+
+    public void delete(UUID id) {
 
         Difficulty difficultyToBeDeleted = findById(id);
 
